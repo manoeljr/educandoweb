@@ -7,6 +7,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
 import java.util.Objects;
+import java.util.function.DoubleConsumer;
 
 @Entity
 @Table(name = "tb_order_item")
@@ -57,6 +58,10 @@ public class OrderItem {
 
     public void setPrice(Double price) {
         this.price = price;
+    }
+
+    public Double getSubTotal() {
+        return price * quantity;
     }
 
     @Override
